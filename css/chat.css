@@ -17,11 +17,15 @@
 .chat-holder {
 
   display: flex;
+  opacity: 0.9;
   flex-direction: column;
   height: 100%;
   width: 100%;
+  /*
   background-color: hsla(290, 50%, 50%, 1);
+  */
 }
+
 
 .chat-bubbles {
   overflow-y: scroll;
