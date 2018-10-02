@@ -45,6 +45,8 @@ var chat = {
       class: "chat-inputrow"
     }).appendTo(chat.chatHolder);
 
+    /* disable sayButton */
+    /*
     // Create container for text input and submission button
     var inputHolder = $("<div/>", {
       class: "chat-inputholder"
@@ -60,7 +62,10 @@ var chat = {
         $(this).val("");
       }
     });
+    */
 
+    /* disable sayButton */
+    /*
     // Submission button
     chat.sayButton = $('<input/>', {
       class: "chat-inputbutton",
@@ -70,6 +75,7 @@ var chat = {
       chat.say(1, chat.inputField.val());
       chat.inputField.val("");
     });
+    */
   },
 
   setChips: function(chips) {
