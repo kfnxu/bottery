@@ -17,27 +17,30 @@
 .chat-holder {
 
   display: flex;
-  opacity: 0.9;
+  //opacity: 0.5;
   flex-direction: column;
   height: 100%;
   width: 100%;
+  background:  url('transparent.png');
   /*
   background-color: hsla(290, 50%, 50%, 1);
   */
 }
-
 
 .chat-bubbles {
   overflow-y: scroll;
   overflow-x: auto;
   flex: 1;
   background-color: hsla(320, 50%, 100%, 1);
+  background:  url('transparent.png');
 }
 
 .chat-bubblerow {
   position: relative;
   margin:5px;
   background-color: hsla(120, 50%, 80%, .0);
+  background:  url('transparent.png');
+
 }
 .chat-bubble {
   font-size: 14px;
@@ -105,3 +108,4 @@
 .chat-inputbutton {
   flex-grow: 0;
 }
+
