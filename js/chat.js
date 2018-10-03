@@ -104,9 +104,10 @@ var chat = {
   },
 
   say: function(who, s) {
-    //console.log(who + ": " + s);
+    console.log( 'chat.say', who + ": " + s);
     chat.createBubble(who, s);
-
+    console.log('richText', richText);
+    richText.setText(s);
 
     chat.bubbleHolder.scrollTop(chat.bubbleHolder[0].scrollHeight);
 
@@ -126,3 +127,4 @@ var chat = {
     }).appendTo(bubbleRow);
   }
 }
+
