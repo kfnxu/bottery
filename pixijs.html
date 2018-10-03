@@ -1,21 +1,22 @@
-  <link rel="stylesheet" href="css/jquery-ui.min.css?v=1.1">
+   <link rel="stylesheet" href="css/jquery-ui.min.css?v=1.1">
 
   <link rel="stylesheet" href="css/page.css?v=1.1">
   <link rel="stylesheet" href="css/viz.css?v=1.1">
   <link rel="stylesheet" href="css/chat.css?v=1.1">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.1/pixi.min.js"></script>
+<script type="text/javascript" src="external/pixi-ui.js"></script>
 
 <body>
 
-  <main id="content"  style="opacity: 0.8;">
+  <main id="content"  style="background: url('css/transparent.png') ; ">
     <div class="header">
       <div id="main-controls" class="controls">
       </div>
     </div>
 
-    <div id="main" style="opacity: 0.8;">
-      <div id="panel-holder">
+    <div id="main" style="background:  url('css/transparent.png'); ">
+      <div id="panel-holder"  style="background:  url('css/transparent.png');>
       </div>
     </div>
     <div id="footer">
@@ -28,11 +29,42 @@
 
 var app = new PIXI.Application(800, 600, {backgroundColor: 0x1099bb});
 document.body.appendChild(app.view);
+/*
+PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.LINEAR;
+PIXI.settings.RESOLUTION = devicePixelRatio || 1;
+PIXI.UI.DynamicText.settings.debugSpriteSheet = true;
 
-var basicText = new PIXI.Text('Basic text in pixi');
+
+app = new PIXI.Application({ width: window.innerWidth, height: window.innerHeight, resolution: devicePixelRatio || 1, transparent: true });
+app.view.className = "canvas";
+document.body.appendChild(app.view);
+
+var uiStage = new PIXI.UI.Stage(window.innerWidth, window.innerHeight);
+app.stage.addChild(uiStage);
+*/
+
+//window resize
+window.addEventListener("resize", function () {
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    uiStage.resize(window.innerWidth, window.innerHeight);
+});
+
+
+var basicText = new PIXI.Text('Basic text in pixi Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines Rich text with a lot of options and across multiple lines', {wordWrap:true, wordWrapWidth: 200, fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'} );
 basicText.x = 30;
 basicText.y = 90;
 
+container = new PIXI.UI.ScrollingContainer();
+container.anchorBottom = container.anchorRight = container.anchorTop = 18;
+container.anchorLeft = "40%";
+//window resize
+window.addEventListener("resize", function () {
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    app.stage.resize(window.innerWidth, window.innerHeight);
+});
+
+//app.stage.addChild(container);
+//container.addChild(basicText);
 app.stage.addChild(basicText);
 
 var style = new PIXI.TextStyle({
@@ -82,3 +114,5 @@ app.stage.addChild(richText);
   <script src="js/viz.js"></script>
   <script src="js/controls.js"></script>
   <script src="js/app.js"></script>
+
+
